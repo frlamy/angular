@@ -1,43 +1,25 @@
-<h1>Angular</h1>
+<div class="container m">
+  <h1>Angular</h1>
 
-<a no-open href="https://google.com">NO OPEN !</a>
-<hr>
-<a confirm confirm-message="Vous allez être redirigé vers une nouvelle page, confirmer ?" href="https://google.com">CONFIRM !</a>
+  <a no-open href="https://google.com">NO OPEN !</a>
+  <hr>
+  <a confirm confirm-message="Vous allez être redirigé vers une nouvelle page, confirmer ?" href="https://google.com">CONFIRM !</a>
 
-<p highlight background-color="green" base-color="purple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate debitis incidunt ipsa iusto natus nobis!</p>
+  <p highlight background-color="green" base-color="purple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate debitis incidunt ipsa iusto natus nobis!</p>
 
-<p highlight>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad corporis ducimus ea, ipsum labore minus nulla
-  numquam odit officia quidem quisquam quos rerum. Expedita.</p>
+  <p highlight>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad corporis ducimus ea, ipsum labore minus nulla
+    numquam odit officia quidem quisquam quos rerum. Expedita.</p>
 
-<counter [initial-value]="0" [step]="2"></counter>
-<counter [initial-value]="10" [step]="1"></counter>
+  <counter [initial-value]="0" [step]="2"></counter>
 
-<user-profile
-  first-name="john"
-  last-name="doe"
-  job="developer"
-  salary="2700"
-  [hired]="true"
->
-</user-profile>
+  <counter [initial-value]="10" [step]="1"></counter>
 
-
-<user-profile
-  first-name="jane"
-  last-name="doe"
-  job="lawyer"
-  salary="3400"
-  [hired]="true"
->
-</user-profile>
-
-
-<user-profile
-  first-name="john"
-  last-name="jane"
-  job="baker"
-  salary="2400"
-  [hired]="false"
-
->
-</user-profile>
+  <user-profile
+    first-name="john"
+    last-name="doe"
+    job="developer"
+    salary="2700"
+    [hired]="true"
+  >
+  </user-profile>
+</div>
