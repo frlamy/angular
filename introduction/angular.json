@@ -295,7 +295,8 @@
             "styles": [
               "projects/password-generator/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "projects/password-generator/karma.conf.js"
           }
         }
       }
