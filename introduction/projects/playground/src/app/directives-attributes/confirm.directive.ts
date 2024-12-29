@@ -1,17 +1,15 @@
 import {Directive, HostBinding, HostListener, Input} from '@angular/core';
 
 @Directive({
-  selector: '[confirm]',
+  selector: 'a[confirm]',
   standalone: false,
 })
 export class ConfirmDirective {
-
   @Input('confirm-message')
-  confirmMessage = "Confirmation ?"
+  confirmMessage = 'Redirection vers un autre site';
 
   @HostListener('click')
-  onClickConfirm() {
+  onClick() {
     return window.confirm(this.confirmMessage);
   }
-
 }

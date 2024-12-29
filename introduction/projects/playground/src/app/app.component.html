@@ -1,25 +1,26 @@
 <div class="container m">
   <h1>Angular</h1>
 
-  <a no-open href="https://google.com">NO OPEN !</a>
+  <p highlight>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores culpa deleniti dolorem, doloremque ducimus error facilis hic illo libero nobis quaerat, quibusdam rem ut vitae! Assumenda doloribus inventore perferendis!</p>
+
+  <p highlight base-color="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor in nihil officia porro quisquam!</p>
+
+  <p highlight background-color="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dicta, explicabo labore minus nesciunt odit provident rem sapiente! Aut, dolorum earum eos facilis fugiat hic ipsa laborum maxime minus nihil quae quasi, rem tempore ullam vitae. A aperiam atque consequatur corporis, earum et magni modi placeat repellat, sequi, tempora voluptates!</p>
+
+  <a no-open href="https://google.com">Google : No-open</a>
   <hr>
-  <a confirm confirm-message="Vous allez être redirigé vers une nouvelle page, confirmer ?" href="https://google.com">CONFIRM !</a>
-
-  <p highlight background-color="green" base-color="purple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate debitis incidunt ipsa iusto natus nobis!</p>
-
-  <p highlight>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad corporis ducimus ea, ipsum labore minus nulla
-    numquam odit officia quidem quisquam quos rerum. Expedita.</p>
-
-  <counter [initial-value]="0" [step]="2"></counter>
-
-  <counter [initial-value]="10" [step]="1"></counter>
+  <a confirm confirm-message="Vous allez être redirigé vers google, confirmer ?" href="https://google.com">Google : Confirm</a>
 
   <user-profile
     first-name="john"
     last-name="doe"
-    job="developer"
-    salary="2700"
+    job="developper"
+    [salary]="2700"
     [hired]="true"
   >
   </user-profile>
+  <hr>
+
+  <counter [initial-value]="0" [step]="5"></counter>
+
 </div>

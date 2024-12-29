@@ -2,20 +2,22 @@ import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'counter',
-  standalone: false,
   template: `
-    <h2>Counter : {{ initialValue }}</h2>
-    <button (click)="addStep()">+</button>
-    <button (click)="removeStep()">-</button>
-    <button (click)="clearValue()">Clear</button>
-  `
+    <h3> Counter : {{ initialValue }}</h3>
+    <div>
+      <button (click)="addStep()">+ {{ step }}</button>
+      <button (click)="removeStep()">- {{ step }}</button>
+      <button (click)="resetValue()">Reset</button>
+    </div>
+  `,
+  standalone: false,
 })
 export class CounterComponent {
   @Input('initial-value')
   initialValue: number = 0;
 
   @Input('step')
-  step: number = 0;
+  step: number = 1;
 
   addStep() {
     this.initialValue += this.step;
@@ -23,11 +25,11 @@ export class CounterComponent {
 
   removeStep() {
     if (this.initialValue > 0) {
-      this.initialValue -= this.step;
+      this.initialValue-= this.step;
     }
   }
 
-  clearValue() {
+  resetValue() {
     this.initialValue = 0;
   }
 }
