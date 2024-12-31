@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
-import {Spectator, createComponentFactory} from '@ngneat/spectator';
+import {createComponentFactory, Spectator} from '@ngneat/spectator';
 
 describe('AppComponent (Spectator)', () => {
   let spectator: Spectator<AppComponent>;
@@ -13,21 +13,21 @@ describe('AppComponent (Spectator)', () => {
   });
 
   beforeEach(() => {
+    // La fixture est intégrée à Spectator
     spectator = createComponent();
     component = spectator.component;
   });
 
-  it('should work', () => {
-    expect(spectator.query('article')).toHaveText('Cliquez sur le bouton "générer"');
+  it('should display right title for article', () => {
+    expect(spectator.query('article')?.textContent).toBe('Cliquez sur le bouton "générer"');
   });
 
-  it('should change message when button is clicked and be : GENERATED_PASSWORD', async () => {
+  it('should change article textContent when button is clicked', async () => {
     spectator.click('button');
     expect(spectator.query('article')?.textContent).toBe('GENERATED_PASSWORD');
   });
 
-  it('should update settings when checkboxes are clicked', async () => {
-
+  it('should update data when checkboxes are checked', async () => {
     spectator.click('#uppercase');
     expect(component.uppercase).toBeTrue();
 
@@ -36,19 +36,16 @@ describe('AppComponent (Spectator)', () => {
 
     spectator.click('#symbols');
     expect(component.symbols).toBeTrue();
-  })
+  });
 
-  it('should update settings when value is updated', async () => {
-    // When it's an input, we have to call dispatchEvent(new Event('input'));
-    spectator.typeInElement("33", "#length");
-    expect(component.length).toEqual(33);
-  })
-
+  it('should update length when value is updated', async () => {
+    spectator.typeInElement("33", '#length');
+    expect(component.length).toBe(33);
+  });
 });
 
 describe('AppComponent (TestBed)', () => {
   let fixture: ComponentFixture<AppComponent>;
-
   let component: AppComponent;
 
   beforeEach(async () => {
@@ -57,29 +54,23 @@ describe('AppComponent (TestBed)', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
-
     fixture.autoDetectChanges();
-
     component = fixture.componentInstance;
-  })
-
-  it('should work', async () => {
-    const article = fixture.nativeElement.querySelector('article');
-    expect(article.textContent).toBe('Cliquez sur le bouton "générer"');
   });
 
-  it('should change message when button is clicked and be : GENERATED_PASSWORD', async () => {
-    const button = fixture.nativeElement.querySelector('button');
-
-    button.click();
-
+  it('should display right title for article', async () => {
     const article = fixture.nativeElement.querySelector('article');
+    expect(article.textContent).toBe('Cliquez sur le bouton "générer"');
+  })
 
+  it('should change article textContent when button is clicked', async () => {
+    const button = fixture.nativeElement.querySelector('button');
+    const article = fixture.nativeElement.querySelector('article');
+    button.click();
     expect(article.textContent).toBe('GENERATED_PASSWORD');
   });
 
-  it('should update settings when checkboxes are clicked', async () => {
-
+  it('should update data when checkboxes are checked', async () => {
     fixture.nativeElement.querySelector('#uppercase').click();
     expect(component.uppercase).toBeTrue();
 
@@ -88,14 +79,14 @@ describe('AppComponent (TestBed)', () => {
 
     fixture.nativeElement.querySelector('#symbols').click();
     expect(component.symbols).toBeTrue();
-  })
+  });
 
-  it('should update settings when value is updated', async () => {
-    // When it's an input, we have to call dispatchEvent(new Event('input'));
+  it('should update length data when updated', async () => {
+    // Dès lors qu'on a un event, en l'occurence un input et que ce n'est pas une checkbox, il faut utiliser la fonction dispatchEvent() pour surveiller et tester l'input
     const length = fixture.nativeElement.querySelector('#length');
     length.value = 33;
     length.dispatchEvent(new Event('input'));
 
-    expect(component.length).toEqual(33);
+    expect(fixture.componentInstance.length).toBe(33);
   })
 });

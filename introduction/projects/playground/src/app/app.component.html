@@ -1,15 +1,17 @@
 <div class="container m">
   <h1>Angular</h1>
 
-  <p highlight>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores culpa deleniti dolorem, doloremque ducimus error facilis hic illo libero nobis quaerat, quibusdam rem ut vitae! Assumenda doloribus inventore perferendis!</p>
+  <p #paragraph="hl" highlight>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores culpa deleniti dolorem, doloremque ducimus error facilis hic illo libero nobis quaerat, quibusdam rem ut vitae! Assumenda doloribus inventore perferendis!</p>
 
-  <p highlight base-color="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor in nihil officia porro quisquam!</p>
+  <p highlight base-color="red" (color-change)="onColorChange($event)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor in nihil officia porro quisquam!</p>
 
   <p highlight background-color="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dicta, explicabo labore minus nesciunt odit provident rem sapiente! Aut, dolorum earum eos facilis fugiat hic ipsa laborum maxime minus nihil quae quasi, rem tempore ullam vitae. A aperiam atque consequatur corporis, earum et magni modi placeat repellat, sequi, tempora voluptates!</p>
 
   <a no-open href="https://google.com">Google : No-open</a>
   <hr>
   <a confirm confirm-message="Vous allez être redirigé vers google, confirmer ?" href="https://google.com">Google : Confirm</a>
+
+  <button (click)="paragraph.onMouseEnter()">Paragraph instance</button>
 
   <user-profile
     first-name="john"
@@ -23,4 +25,19 @@
 
   <counter [initial-value]="0" [step]="5"></counter>
 
+  My income = {{ basicIncome }}
+  <input
+    type="number"
+    placeholder="Income & salary"
+    [(model)]="basicIncome"
+  >
+<!--  Banana in the box :  [(model)]="basicIncome" correpond aux 2 lignes :
+     (modelChange)="basicIncome = $event"
+     [model]=basicIncome
+
+     la convention veut que nous passions en camelCase + suffixe Change. Nous permet de gérer le formatage des données en entrée et en sortie dans Angular
+ -->
+<!--  basicIncome = $event correspond à this.basicIncome = value // La value renvoyée par l'EventEmitter-->
+
+  <button (click)="calculTaxes()">Calcul des impôts</button>
 </div>

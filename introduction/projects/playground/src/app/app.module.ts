@@ -9,6 +9,7 @@ import {NoOpenDirective} from './directives-attributes/no-open.directive';
 import {ConfirmDirective} from './directives-attributes/confirm.directive';
 import {UserProfileComponent} from './components/user-profile.component';
 import {CounterComponent} from './components/counter-component';
+import {ModelChangeDirective} from './directives-attributes/model-change.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {CounterComponent} from './components/counter-component';
     HighlightDirective,
     NoOpenDirective,
     ConfirmDirective,
+    ModelChangeDirective,
   ],
   imports: [
     BrowserModule,

@@ -33,7 +33,7 @@ export class UserProfileComponent {
   job: string = '';
 
   @Input('salary')
-  salary: number = 0;
+  salary: number = 2700;
 
   @Input('hired')
   isHired!: boolean;
