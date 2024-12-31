@@ -10,13 +10,13 @@ export class HighlightDirective {
     this.backgroundColor = this.baseColor;
   }
 
-  @Output('color-change')
+  @Output('colorChange')
   colorChangeEvent: EventEmitter<string> = new EventEmitter();
 
   @Input('background-color')
   color: string = "green";
 
-  @Input('base-color')
+  @Input('color')
   baseColor: string = "transparent";
 
   @HostBinding('style.backgroundColor')

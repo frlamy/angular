@@ -3,7 +3,7 @@
 
   <p #paragraph="hl" highlight>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores culpa deleniti dolorem, doloremque ducimus error facilis hic illo libero nobis quaerat, quibusdam rem ut vitae! Assumenda doloribus inventore perferendis!</p>
 
-  <p highlight base-color="red" (color-change)="onColorChange($event)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor in nihil officia porro quisquam!</p>
+  <p highlight color="red" [(color)]="defaultColor">{{ defaultColor }}</p>
 
   <p highlight background-color="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dicta, explicabo labore minus nesciunt odit provident rem sapiente! Aut, dolorum earum eos facilis fugiat hic ipsa laborum maxime minus nihil quae quasi, rem tempore ullam vitae. A aperiam atque consequatur corporis, earum et magni modi placeat repellat, sequi, tempora voluptates!</p>
 

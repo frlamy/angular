@@ -9,12 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   basicIncome = 100;
 
-  onColorChange(color: string) {
-    console.log('ColorChange : ' + color);
-  }
+  defaultColor = 'yellow';
 
   calculTaxes() {
-    const tax = this.basicIncome * 0.19;
-    console.log(tax);
+    this.basicIncome = this.basicIncome * 0.19;
   }
 }
