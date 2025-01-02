@@ -11,6 +11,12 @@ export class AppComponent {
 
   defaultColor = 'yellow';
 
+  age: number = 30;
+
+  nationality: string = 'Switzerland';
+
+  firstName: string = 'Jake';
+
   calculTaxes() {
     this.basicIncome = this.basicIncome * 0.19;
   }

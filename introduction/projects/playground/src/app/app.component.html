@@ -1,6 +1,19 @@
 <div class="container m">
   <h1>Angular</h1>
 
+  {{ firstName }}
+  <p [example]="firstName"
+     [set-classes]="{ red: age >= 18, bold: nationality === 'Switzerland'}"
+  >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deleniti fuga ipsa provident quisquam, rem?</p>
+
+  <button (click)="age = 2">Change age</button>
+
+  <button (click)="nationality = 'France'">Change nationality</button>
+
+  <button (click)="firstName = 'John'">Change example</button>
+
+  <hr>
+
   <p #paragraph="hl" highlight>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores culpa deleniti dolorem, doloremque ducimus error facilis hic illo libero nobis quaerat, quibusdam rem ut vitae! Assumenda doloribus inventore perferendis!</p>
 
   <p highlight color="red" [(color)]="defaultColor">{{ defaultColor }}</p>
@@ -12,6 +25,8 @@
   <a confirm confirm-message="Vous allez être redirigé vers google, confirmer ?" href="https://google.com">Google : Confirm</a>
 
   <button (click)="paragraph.onMouseEnter()">Paragraph instance</button>
+
+  <hr>
 
   <user-profile
     first-name="john"

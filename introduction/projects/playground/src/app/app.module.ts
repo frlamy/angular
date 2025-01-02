@@ -10,6 +10,8 @@ import {ConfirmDirective} from './directives-attributes/confirm.directive';
 import {UserProfileComponent} from './components/user-profile.component';
 import {CounterComponent} from './components/counter-component';
 import {ModelChangeDirective} from './directives-attributes/model-change.directive';
+import {FormsModule} from '@angular/forms';
+import {SetClassesDirective} from './directives-attributes/set-classes.directive';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import {ModelChangeDirective} from './directives-attributes/model-change.directi
     NoOpenDirective,
     ConfirmDirective,
     ModelChangeDirective,
+    SetClassesDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
