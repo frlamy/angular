@@ -196,7 +196,8 @@
             "styles": [
               "projects/playground/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "projects/playground/karma.conf.js"
           }
         }
       }

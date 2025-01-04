@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {createComponentFactory, Spectator} from '@ngneat/spectator';
+import {FormsModule} from '@angular/forms';
 
 describe('AppComponent (Spectator)', () => {
   let spectator: Spectator<AppComponent>;
@@ -9,7 +10,8 @@ describe('AppComponent (Spectator)', () => {
 
   const createComponent = createComponentFactory({
     component: AppComponent,
-    declarations: [AppComponent]
+    declarations: [AppComponent],
+    imports: [FormsModule],
   });
 
   beforeEach(() => {
@@ -50,7 +52,8 @@ describe('AppComponent (TestBed)', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent]
+      declarations: [AppComponent],
+      imports: [FormsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);

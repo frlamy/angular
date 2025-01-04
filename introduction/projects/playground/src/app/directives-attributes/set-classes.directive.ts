@@ -6,6 +6,7 @@ import {Directive, ElementRef, Input, SimpleChange, SimpleChanges} from '@angula
 })
 export class SetClassesDirective {
 
+  // RECONSTRUCTION DE LA DIRECTIVE NGCLASS DU BROWSERMODULE
   @Input('set-classes')
   cssClasses : { [key: string]: boolean} = {};
 

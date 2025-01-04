@@ -14,17 +14,6 @@ export class AppComponent {
   numbers: boolean = false;
   symbols: boolean = false;
 
-  onChangeLength(event: Event) {
-    this.length = (event.target as HTMLInputElement).valueAsNumber;
-  }
-
-  onChangeSetting(setting: string, value: boolean) {
-    if (setting !== 'uppercase' && setting !== 'numbers' && setting !== 'symbols') {
-      return;
-    }
-    this[setting] = value;
-  }
-
   onClickGenerate() {
     this.message = "GENERATED_PASSWORD";
     console.table({

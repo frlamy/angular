@@ -20,4 +20,8 @@ export class AppComponent {
   calculTaxes() {
     this.basicIncome = this.basicIncome * 0.19;
   }
+
+  onConfirmEmail(email: string) {
+    console.log('outside ' + email);
+  }
 }

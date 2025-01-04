@@ -1,9 +1,33 @@
 <div class="container m">
   <h1>Angular</h1>
 
-  {{ firstName }}
-  <p [example]="firstName"
-     [set-classes]="{ red: age >= 18, bold: nationality === 'Switzerland'}"
+  <card title="My card">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis id iure nam perferendis, quas.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <footer>
+      <a href="#">More</a>
+    </footer>
+  </card>
+
+  <hr>
+
+  <div class="grid">
+    <newsletter
+      title="Sign in to the NL"
+      button-text="Confirm"
+      placeholder="Your email"
+      (confirm)="onConfirmEmail($event)"
+    >
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dicta doloribus minima? Dolorem, iusto, sunt.</p>
+    </newsletter>
+  </div>
+
+  <hr>
+
+  <h4>Force lowercase :</h4>
+  <input type="text" placeholder="prenom" force-lower value="FRANCK">
+
+  <p [ngClass]="{ red: age >= 18, bold: nationality === 'Switzerland'}"
   >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deleniti fuga ipsa provident quisquam, rem?</p>
 
   <button (click)="age = 2">Change age</button>
@@ -44,7 +68,7 @@
   <input
     type="number"
     placeholder="Income & salary"
-    [(model)]="basicIncome"
+    [(ngModel)]="basicIncome"
   >
 <!--  Banana in the box :  [(model)]="basicIncome" correpond aux 2 lignes :
      (modelChange)="basicIncome = $event"
