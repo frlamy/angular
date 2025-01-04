@@ -1,4 +1,5 @@
-import {Component, HostBinding, Input} from '@angular/core';
+import {Component, Output} from '@angular/core';
+import {PasswordSettings} from './types';
 
 @Component({
   standalone: false,
@@ -7,20 +8,25 @@ import {Component, HostBinding, Input} from '@angular/core';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  message:string = 'Cliquez sur le bouton "générer"';
+  message: string = 'Cliquez sur le bouton "générer"';
 
-  length: number = 20;
-  uppercase: boolean = false;
-  numbers: boolean = false;
-  symbols: boolean = false;
+  passwordSettings: PasswordSettings = {
+    length: 15,
+    uppercase: false,
+    numbers: false,
+    symbols: false
+  }
+
+  get passwordSettingsCopy() {
+    return {...this.passwordSettings};
+  }
+
+  onSettingsChange(settings: PasswordSettings) {
+    this.passwordSettings = settings;
+    console.log(this.passwordSettings);
+  }
 
   onClickGenerate() {
     this.message = "GENERATED_PASSWORD";
-    console.table({
-      uppercase: this.uppercase,
-      numbers: this.numbers,
-      symbols: this.symbols,
-      length: this.length
-    })
   }
 }
