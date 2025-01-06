@@ -7,7 +7,7 @@ import {PasswordSettings} from '../types';
 
   template: `
     <label for="length">Longueur du mot de passe : {{ defaultSettings.length }}</label>
-    <input (change)="onChange()" [(ngModel)]="defaultSettings.length" id="length" type="range" min="10" max="50" name="length"/>
+    <input (input)="onChange()" [(ngModel)]="defaultSettings.length" id="length" type="range" min="10" max="50" name="length"/>
 
     <label for="uppercase">
       <input (change)="onChange()" [(ngModel)]="defaultSettings.uppercase" role="switch" type="checkbox" name="uppercase" id="uppercase"/>
@@ -26,14 +26,14 @@ import {PasswordSettings} from '../types';
 })
 export class PasswordSettingsComponent {
   @Input('default-settings')
-  defaultSettings = {
+  defaultSettings : PasswordSettings = {
     length : 20,
     uppercase : false,
     numbers: false,
     symbols: false,
   }
 
-  @Output('change-settings')
+  @Output('settings-change')
   onChangeEvent = new EventEmitter<PasswordSettings>();
 
   onChange() {

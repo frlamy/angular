@@ -1,4 +1,4 @@
-import {Component, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {PasswordSettings} from './types';
 
 @Component({
@@ -11,7 +11,7 @@ export class AppComponent {
   message: string = 'Cliquez sur le bouton "générer"';
 
   passwordSettings: PasswordSettings = {
-    length: 15,
+    length: 0,
     uppercase: false,
     numbers: false,
     symbols: false
@@ -23,7 +23,6 @@ export class AppComponent {
 
   onSettingsChange(settings: PasswordSettings) {
     this.passwordSettings = settings;
-    console.log(this.passwordSettings);
   }
 
   onClickGenerate() {

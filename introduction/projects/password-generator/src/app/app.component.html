@@ -3,7 +3,7 @@
   <div class="grid">
     <password-display [message]="message"></password-display>
     <div>
-      <password-settings [default-settings]="passwordSettingsCopy" (change-settings)="onSettingsChange($event)"></password-settings>
+      <password-settings [default-settings]="passwordSettingsCopy" (settings-change)="onSettingsChange($event)"></password-settings>
       <password-controls (generate)="onClickGenerate()" button-text="Générer"></password-controls>
     </div>
   </div>

@@ -34,18 +34,18 @@ describe('AppComponent (Spectator)', () => {
 
   it('should update data when checkboxes are checked', async () => {
     spectator.click('#uppercase');
-    expect(component.uppercase).toBeTrue();
+    expect(component.passwordSettings.uppercase).toBeTrue();
 
     spectator.click('#numbers');
-    expect(component.numbers).toBeTrue();
+    expect(component.passwordSettings.numbers).toBeTrue();
 
     spectator.click('#symbols');
-    expect(component.symbols).toBeTrue();
+    expect(component.passwordSettings.symbols).toBeTrue();
   });
 
   it('should update length when value is updated', async () => {
     spectator.typeInElement("33", '#length');
-    expect(component.length).toBe(33);
+    expect(component.passwordSettings.length).toBe(33);
   });
 });
 
@@ -78,13 +78,13 @@ describe('AppComponent (TestBed)', () => {
 
   it('should update data when checkboxes are checked', async () => {
     fixture.nativeElement.querySelector('#uppercase').click();
-    expect(component.uppercase).toBeTrue();
+    expect(component.passwordSettings.uppercase).toBeTrue();
 
     fixture.nativeElement.querySelector('#numbers').click();
-    expect(component.numbers).toBeTrue();
+    expect(component.passwordSettings.numbers).toBeTrue();
 
     fixture.nativeElement.querySelector('#symbols').click();
-    expect(component.symbols).toBeTrue();
+    expect(component.passwordSettings.symbols).toBeTrue();
   });
 
   it('should update length data when updated', async () => {
@@ -93,6 +93,6 @@ describe('AppComponent (TestBed)', () => {
     length.value = 33;
     length.dispatchEvent(new Event('input'));
 
-    expect(fixture.componentInstance.length).toBe(33);
+    expect(fixture.componentInstance.passwordSettings.length).toBe(33);
   })
 });
