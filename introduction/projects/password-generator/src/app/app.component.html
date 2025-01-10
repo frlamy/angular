@@ -1,27 +1,10 @@
 <div class="container">
   <h1>Générez un mot de passe</h1>
   <div class="grid">
+    <password-display [password]="password"></password-display>
     <div>
-      <h3>Votre mot de passe :</h3>
-      <article>{{ message }}</article>
-    </div>
-    <div>
-      <label for="length">Longueur du mot de passe : {{ length }}</label>
-      <input id="length" type="range" min="10" max="50" name="length" (input)="onChangeLength($event)" />
-
-      <label for="uppercase">
-        <input #uppercaseInput (change)="onChangeSetting(uppercaseInput.name, uppercaseInput.checked)" role="switch" type="checkbox" name="uppercase" id="uppercase"/>
-        Contiendra des majuscules
-      </label>
-      <label for="numbers">
-        <input #numbersInput (change)="onChangeSetting(numbersInput.name, numbersInput.checked)"  role="switch" type="checkbox" name="numbers" id="numbers" />
-        Contiendra des nombres
-      </label>
-      <label for="symbols">
-        <input #symbolsInput (change)="onChangeSetting(symbolsInput.name, symbolsInput.checked)"  role="switch" type="checkbox" name="symbols" id="symbols" />
-        Contiendra des caractères spéciaux
-      </label>
-      <button (click)="onClickGenerate()">Générer</button>
+      <password-settings [default-settings]="passwordSettingsCopy" (settings-change)="onSettingsChange($event)"></password-settings>
+      <password-controls (generate)="onClickGenerate()" button-text="Générer"></password-controls>
     </div>
   </div>
 </div>

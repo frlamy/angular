@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {FormsModule} from '@angular/forms';
+import { PasswordDisplayComponent } from './components/password-display.component';
+import { PasswordControlsComponent } from './components/password-controls.component';
+import { PasswordSettingsComponent } from './components/password-settings.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PasswordDisplayComponent,
+    PasswordControlsComponent,
+    PasswordSettingsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
