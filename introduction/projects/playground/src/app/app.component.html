@@ -1,6 +1,65 @@
 <div class="container m">
   <h1>Angular</h1>
 
+  <hr>
+
+  <h2>Pagination repeat directive</h2>
+
+  <a href="#" *repeat="pages; let index">Page {{ index }} </a>
+
+  <button (click)="pages = pages + 1">Ajouter</button>
+  <hr>
+
+  <h5>Annotation loop : ng-template</h5>
+  <ul>
+    <ng-template [loopOf]="personArray" let-person let-index="index">
+      <li>{{ person.firstName }} {{ person.lastName }} : number #{{ index + 1 }}</li>
+    </ng-template>
+  </ul>
+
+  <h5>Annotation loop : étoile</h5>
+  <ul>
+    <li *loop="let person of personArray; let index=index">
+      {{ person.firstName }} {{ person.lastName }} : number #{{ index }}
+    </li>
+  </ul>
+
+  <h5>Annotation ngLoop</h5>
+  <ul>
+    <li *ngFor="let person of personArray; let index=index">
+      {{ person.firstName }} {{ person.lastName }} : number #{{ index }}
+    </li>
+  </ul>
+
+
+  <button (click)="addPerson()">Ajouter une ligne au tableau</button>
+
+  <hr>
+   <ng-container #container>
+     ng-container
+   </ng-container>
+
+  <h2 *if="age > 18; else otherTemplate">
+    IF* : Ng-template {{ age }}
+  </h2>
+
+  <h2 *ngIf="age > 18; else otherTemplate">
+    ngIf* : Ng-template {{ age }}
+  </h2>
+
+  <ng-template #template let-variable="variable" [if]="age >= 18" [ifElse]="otherTemplate">
+    <h2>IF : Ng-template {{ age }} </h2>
+  </ng-template>
+
+  <ng-template #otherTemplate>
+    <h2>ELSE : Other Template {{ age }} </h2>
+  </ng-template>
+  <br>
+  <input type="number" #ageInput>
+  <button (click)="age = ageInput.valueAsNumber">Display IF age > 18</button>
+
+  <hr>
+
   <card title="My card">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis id iure nam perferendis, quas.</p>
     <p>Lorem ipsum dolor sit amet.</p>

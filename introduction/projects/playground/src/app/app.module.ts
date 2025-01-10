@@ -15,6 +15,9 @@ import {SetClassesDirective} from './directives-attributes/set-classes.directive
 import {ForceLowerDirective} from './directives-attributes/force-lower.directive';
 import {NewsletterComponent} from './components/newsletter.component';
 import {CardComponent} from './components/card.component';
+import {IfDirective} from './structural-directive/if.directive';
+import {LoopDirective} from './structural-directive/loop.directive';
+import {RepeatDirective} from './structural-directive/repeat.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import {CardComponent} from './components/card.component';
     ModelChangeDirective,
     SetClassesDirective,
     ForceLowerDirective,
+    IfDirective,
+    LoopDirective,
+    RepeatDirective,
   ],
   imports: [
     BrowserModule,

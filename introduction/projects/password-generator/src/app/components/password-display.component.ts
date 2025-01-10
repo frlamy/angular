@@ -7,7 +7,10 @@ import {Component, Input} from '@angular/core';
   template: `
     <div>
       <h3>{{ title }}</h3>
-      <article>{{ message }}</article>
+      <article>
+        <span *ngIf="password">{{ password }}</span>
+        <span *ngIf="!password">Cliquez sur le bouton "Générer"</span>
+      </article>
     </div>
   `,
   styles: ``
@@ -17,5 +20,5 @@ export class PasswordDisplayComponent {
   title: string = "Votre mot de passe :";
 
   @Input()
-  message: string = '';
+  password: string = '';
 }

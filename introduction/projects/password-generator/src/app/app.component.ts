@@ -8,7 +8,7 @@ import {PasswordSettings} from './types';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  message: string = 'Cliquez sur le bouton "générer"';
+  password: string = 'Cliquez sur le bouton "générer"';
 
   passwordSettings: PasswordSettings = {
     length: 0,
@@ -26,6 +26,6 @@ export class AppComponent {
   }
 
   onClickGenerate() {
-    this.message = "GENERATED_PASSWORD";
+    this.password = "GENERATED_PASSWORD";
   }
 }
