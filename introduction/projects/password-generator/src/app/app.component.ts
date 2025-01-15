@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {PasswordSettings} from './types';
+import {PasswordGeneratorService} from './password-generator/services/password-generator.service';
 
 @Component({
   standalone: false,
@@ -8,10 +9,13 @@ import {PasswordSettings} from './types';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  password: string = 'Cliquez sur le bouton "générer"';
+  constructor(private passwordGeneratorService: PasswordGeneratorService) {
+  }
+
+  password: string = '';
 
   passwordSettings: PasswordSettings = {
-    length: 0,
+    length: 20,
     uppercase: false,
     numbers: false,
     symbols: false
@@ -26,6 +30,6 @@ export class AppComponent {
   }
 
   onClickGenerate() {
-    this.password = "GENERATED_PASSWORD";
+    this.password = this.passwordGeneratorService.generate(this.passwordSettings);
   }
 }

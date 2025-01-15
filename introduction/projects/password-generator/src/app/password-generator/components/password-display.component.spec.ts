@@ -1,7 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {PasswordDisplayComponent} from './password-display.component';
-import {createComponentFactory, createHostFactory, Spectator, SpectatorHost} from '@ngneat/spectator';
-import {Component, createComponent} from '@angular/core';
+import {createHostFactory, SpectatorHost} from '@ngneat/spectator';
+import {Component} from '@angular/core';
 
 @Component({
   standalone: false,

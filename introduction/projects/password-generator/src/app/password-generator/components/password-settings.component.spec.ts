@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {PasswordSettings} from '../types';
+import {PasswordSettings} from '../../types';
 import {TestBed} from '@angular/core/testing';
 import {PasswordSettingsComponent} from './password-settings.component';
 import {FormsModule} from '@angular/forms';

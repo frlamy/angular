@@ -43,7 +43,6 @@ describe('Declaration component (TestBed)', () => {
     const input = fixture.nativeElement.querySelector('input');
     input.value = 1000;
 
-
     // Injecter le service depuis la fixture
     // const service = fixture.debugElement.injector.get(TaxesService);
 

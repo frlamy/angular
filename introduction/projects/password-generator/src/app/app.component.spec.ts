@@ -1,10 +1,9 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {createComponentFactory, Spectator} from '@ngneat/spectator';
-import {FormsModule} from '@angular/forms';
-import {PasswordDisplayComponent} from './components/password-display.component';
-import {PasswordControlsComponent} from './components/password-controls.component';
-import {PasswordSettingsComponent} from './components/password-settings.component';
+import {PasswordGeneratorService} from './password-generator/services/password-generator.service';
+import {PasswordGeneratorModule} from './password-generator/password-generator.module';
+import {TaxesService} from '../../../playground/src/app/services/taxes.service';
 
 describe('AppComponent (Spectator)', () => {
   let spectator: Spectator<AppComponent>;
@@ -13,8 +12,9 @@ describe('AppComponent (Spectator)', () => {
 
   const createComponent = createComponentFactory({
     component: AppComponent,
-    declarations: [AppComponent, PasswordDisplayComponent, PasswordControlsComponent, PasswordSettingsComponent],
-    imports: [FormsModule],
+    declarations: [AppComponent],
+    imports: [PasswordGeneratorModule],
+    mocks: [PasswordGeneratorService],
   });
 
   beforeEach(() => {
@@ -24,12 +24,14 @@ describe('AppComponent (Spectator)', () => {
   });
 
   it('should display right title for article', () => {
-    expect(spectator.query('article')?.textContent).toBe('Cliquez sur le bouton "générer"');
+    expect(spectator.query('article')?.textContent).toBe('Cliquez sur le bouton "Générer"');
   });
 
   it('should change article textContent when button is clicked', async () => {
+    const service = spectator.inject(PasswordGeneratorService);
+    service.generate.and.returnValue('MOCK_PASSWORD');
     spectator.click('button');
-    expect(spectator.query('article')?.textContent).toBe('GENERATED_PASSWORD');
+    expect(spectator.query('article')?.textContent).toBe('MOCK_PASSWORD');
   });
 
   it('should update data when checkboxes are checked', async () => {
@@ -47,6 +49,13 @@ describe('AppComponent (Spectator)', () => {
     spectator.typeInElement("33", '#length');
     expect(component.passwordSettings.length).toBe(33);
   });
+
+  it('should show copy password when password is generated', () => {
+    const service = spectator.inject(PasswordGeneratorService);
+    service.generate.and.returnValue('MOCK_PASSWORD');
+    spectator.click('#generate');
+    expect(spectator.query('#copy')).toBeTruthy();
+  });
 });
 
 describe('AppComponent (TestBed)', () => {
@@ -55,8 +64,8 @@ describe('AppComponent (TestBed)', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent, PasswordDisplayComponent, PasswordControlsComponent, PasswordSettingsComponent],
-      imports: [FormsModule],
+      declarations: [AppComponent],
+      imports: [PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
@@ -66,14 +75,18 @@ describe('AppComponent (TestBed)', () => {
 
   it('should display right title for article', async () => {
     const article = fixture.nativeElement.querySelector('article');
-    expect(article.textContent).toBe('Cliquez sur le bouton "générer"');
+    expect(article.textContent).toBe('Cliquez sur le bouton "Générer"');
   })
 
   it('should change article textContent when button is clicked', async () => {
+    const service = TestBed.inject(PasswordGeneratorService);
+    const spy = spyOn(service, 'generate');
+
+    spy.and.returnValue('MOCK_PASSWORD');
     const button = fixture.nativeElement.querySelector('button');
     const article = fixture.nativeElement.querySelector('article');
     button.click();
-    expect(article.textContent).toBe('GENERATED_PASSWORD');
+    expect(article.textContent).toBe('MOCK_PASSWORD');
   });
 
   it('should update data when checkboxes are checked', async () => {
@@ -94,5 +107,16 @@ describe('AppComponent (TestBed)', () => {
     length.dispatchEvent(new Event('input'));
 
     expect(fixture.componentInstance.passwordSettings.length).toBe(33);
-  })
+  });
+
+  it('should show copy password when password is generated', () => {
+    const service = TestBed.inject(PasswordGeneratorService);
+    const spy = spyOn(service, "generate");
+    spy.and.returnValue("MOCK_PASSWORD");
+
+    fixture.nativeElement.querySelector('#generate').click();
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.querySelector('#copy')).toBeTruthy();
+  });
 });

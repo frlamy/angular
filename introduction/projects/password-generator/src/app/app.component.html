@@ -1,10 +1,10 @@
 <div class="container">
   <h1>Générez un mot de passe</h1>
   <div class="grid">
-    <password-display [password]="password"></password-display>
+    <password-display [password]="password" ></password-display>
     <div>
       <password-settings [default-settings]="passwordSettingsCopy" (settings-change)="onSettingsChange($event)"></password-settings>
-      <password-controls (generate)="onClickGenerate()" button-text="Générer"></password-controls>
+      <password-controls [password]="password" (generate)="onClickGenerate()" button-text="Générer" copy-button-text="Copier le mot de passe"></password-controls>
     </div>
   </div>
 </div>
