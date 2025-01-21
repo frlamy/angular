@@ -3,105 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "introduction": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "standalone": false
-        },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
-        "@schematics/angular:pipe": {
-          "standalone": false
-        }
-      },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:application",
-          "options": {
-            "outputPath": "dist/introduction",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "introduction:build:production"
-            },
-            "development": {
-              "buildTarget": "introduction:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
-          }
-        }
-      }
-    },
     "playground": {
       "projectType": "application",
       "schematics": {
@@ -136,7 +37,8 @@
               }
             ],
             "styles": [
-              "projects/playground/src/styles.css"
+              "projects/playground/src/styles.css",
+              "node_modules/bootswatch/dist/cosmo/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -150,8 +52,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
                 }
               ],
               "outputHashing": "all"
@@ -196,13 +98,12 @@
             "styles": [
               "projects/playground/src/styles.css"
             ],
-            "scripts": [],
-            "karmaConfig": "projects/playground/karma.conf.js"
+            "scripts": []
           }
         }
       }
     },
-    "password-generator": {
+    "crm": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -215,28 +116,29 @@
           "standalone": false
         }
       },
-      "root": "projects/password-generator",
-      "sourceRoot": "projects/password-generator/src",
+      "root": "projects/crm",
+      "sourceRoot": "projects/crm/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/password-generator",
-            "index": "projects/password-generator/src/index.html",
-            "browser": "projects/password-generator/src/main.ts",
+            "outputPath": "dist/crm",
+            "index": "projects/crm/src/index.html",
+            "browser": "projects/crm/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/password-generator/tsconfig.app.json",
+            "tsConfig": "projects/crm/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/password-generator/public"
+                "input": "projects/crm/public"
               }
             ],
             "styles": [
-              "projects/password-generator/src/styles.css"
+              "projects/crm/src/styles.css",
+              "node_modules/bootswatch/dist/cosmo/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -250,8 +152,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
                 }
               ],
               "outputHashing": "all"
@@ -268,10 +170,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "password-generator:build:production"
+              "buildTarget": "crm:build:production"
             },
             "development": {
-              "buildTarget": "password-generator:build:development"
+              "buildTarget": "crm:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -286,26 +188,17 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/password-generator/tsconfig.spec.json",
+            "tsConfig": "projects/crm/tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/password-generator/public"
+                "input": "projects/crm/public"
               }
             ],
             "styles": [
-              "projects/password-generator/src/styles.css"
+              "projects/crm/src/styles.css"
             ],
-            "scripts": [],
-            "karmaConfig": "projects/password-generator/karma.conf.js"
-          }
-        },
-        "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
-          "options": {
-            "outputPath": "dist/password-generator/browser",
-            "netlifyToken": "nfp_CwToznGWMgrLe6a8AthxQYeodMnvaVyg9310",
-            "siteId": "64b51651-f17d-4325-aff1-c45f6dd32520"
+            "scripts": []
           }
         }
       }
