@@ -89,7 +89,7 @@ export class ReactiveSignInComponent {
      * this.signIn.setValue({
      *  email: "Anon@mail.net",
      *  security: {
-     *    password: "Toto",
+     *    password: "",
      *    confirm: "Toto"
      *  },
      *  languages: [
