@@ -7,13 +7,12 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator} from '@angu
   providers: [
     {
       provide: NG_VALIDATORS,
-      useExisting: BannedEmailDirective,
+      useExisting: BannedEmailValidator,
       multi: true
     }
   ]
 })
-export class BannedEmailDirective implements Validator {
-
+export class BannedEmailValidator implements Validator {
   @Input('bannedEmail')
   bannedEmail: string = '';
 

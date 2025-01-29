@@ -1,0 +1,103 @@
+<div class="container mt-2">
+  <h1><u>Advanced Angular</u></h1>
+  <form (submit)="onSubmit()" [formGroup]="signIn">
+    <input
+      [class.is-invalid]="!email.untouched && email.invalid"
+      [class.is-valid]="!email.untouched && email.valid"
+      class="form-control mb-2"
+      email
+      formControlName="email"
+      id="email"
+      name="email"
+      placeholder="Votre e-mail"
+      required
+      type="email"
+    >
+    <p *ngIf="email.invalid && email.hasError('required')" class="invalid-feedback">L'email est obligatoire</p>
+    <p *ngIf="email.invalid && email.hasError('bannedEmail')" class="invalid-feedback">L'email est interdit</p>
+    <p *ngIf="email.pending" class="text-info"><span class="spinner-border spinner-border-sm"></span>&nbsp;Vérification
+      en
+      cours</p>
+    <p *ngIf="!email.untouched && email.hasError('uniqueEmail')" class="invalid-feedback">Cette adresse e-mail est
+      indisponible</p>
+    <div formGroupName="security">
+      <input
+        [class.is-invalid]="!password.untouched && password.invalid"
+        [class.is-valid]="!password.untouched && password.valid"
+        class="form-control mb-2"
+        formControlName="password"
+        id="password"
+        minlength="4"
+        name="password"
+        placeholder="Votre mot de passe"
+        required
+        type="password"
+      >
+      <p *ngIf="!password.untouched && password.hasError('minlength')" class="invalid-feedback">Le mot de passe doit
+        contenir
+        au moins 4 caractères</p>
+      <p *ngIf="!password.untouched && password.hasError('required')" class="invalid-feedback">Le mot de passe est
+        obligatoire</p>
+      <input
+        [class.is-invalid]="!confirm.untouched && confirm.invalid"
+        [class.is-valid]="!confirm.untouched && confirm.valid"
+        class="form-control mb-2"
+        formControlName="confirm"
+        id="confirm"
+        name="confirm"
+        placeholder="Veuillez confirmer votre mot de passe"
+        required
+        type="password"
+      >
+
+      <p *ngIf="!confirm.untouched && confirm.hasError('confirmPassword')" class="invalid-feedback">Les mots de passe ne
+        correspondent pas</p>
+    </div>
+    <hr>
+    <h3>Votre langage préféré :
+      <button (click)="addLanguage()" class="btn btn-outline-info"><b>+&nbsp;Ajouter</b></button>
+    </h3>
+    <div *ngIf="languages.controls.length === 0" class="alert alert-info">Veuillez renseigner un
+      langage en cliquant sur le
+      bouton ci-dessus
+    </div>
+
+    <p *ngIf="languages.hasError('mustHave2Languages')" class="text-danger">Vous devez
+      sélectionner au moins 2
+      langages</p>
+
+    <div *ngFor="let language of languages.controls; let i = index">
+      <div [formGroup]="language" class="row">
+        <div class="col">
+          <input
+            class="form-control mb-2"
+            formControlName="name"
+            placeholder="Nom du langage"
+            type="text"
+          >
+        </div>
+        <div class="col">
+          <select
+            class="form-control mb-2"
+            formControlName="level"
+            id="level"
+            name="level"
+          >
+            <option value="debutant">Débutant</option>
+            <option value="intermediaire">Intermédiaire</option>
+            <option value="expert">Expert</option>
+          </select>
+        </div>
+
+        <div class="col-1">
+          <button (click)="removeLanguage(i)" class="btn btn-sm btn-danger">X</button>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <color-picker formControlName="favoriteColor"></color-picker>
+    <button class="btn btn-success">Inscription</button>
+  </form>
+  <!--  <app-sign-in class="mx-5"></app-sign-in>-->
+</div>

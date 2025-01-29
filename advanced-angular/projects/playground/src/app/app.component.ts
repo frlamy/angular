@@ -1,16 +1,11 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {Component} from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: 'app.component.html',
+  styles: ``
 })
 export class AppComponent {
-  @ViewChild('email')
-  emailInput?: ElementRef<HTMLInputElement>;
 
-  onSubmit(form: NgForm) {
-    console.log(form);
-  }
 }
