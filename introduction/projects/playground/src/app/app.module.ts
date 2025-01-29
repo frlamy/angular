@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {HighlightDirective} from './directives-attributes/highlight.directive';
 import {NgOptimizedImage} from '@angular/common';
 import {NoOpenDirective} from './directives-attributes/no-open.directive';
@@ -51,6 +51,10 @@ import {TAUX_TVA, TaxesService} from './services/taxes.service';
     provide: TAUX_TVA,
     useValue: 0.2
   }],
+  exports: [
+    SetClassesDirective
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

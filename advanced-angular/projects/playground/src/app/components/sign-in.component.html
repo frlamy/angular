@@ -1,0 +1,78 @@
+<form #form="ngForm" (submit)="onSubmit(form)" [ngFormOptions]="{ updateOn: 'submit' } ">
+
+  <color-picker
+    [(ngModel)]="data.color"
+    [ngModelOptions]="{ name:'color' }"
+    label="Choisissez votre couleur préférée :">
+  </color-picker>
+
+  <input
+    #email="ngModel"
+    [(ngModel)]="data.email"
+    [class.is-invalid]="email.touched && email.invalid"
+    [class.is-valid]="email.touched && email.valid"
+    [ngModelOptions]="{ updateOn: 'change' }"
+    bannedEmail="test@test.com"
+    class="form-control mb-2"
+    email
+    id="email"
+    name="email"
+    placeholder="Votre adresse email"
+    required
+    type="email"
+    uniqueEmail
+  />
+  <p *ngIf="email.touched && email.hasError('required')" class="invalid-feedback">L'email est obligatoire</p>
+  <p *ngIf="email.pending" class="text-info"><span class="spinner-border spinner-border-sm"></span>Vérification en
+    cours</p>
+  <p *ngIf="email.touched && email.hasError('uniqueEmail')" class="invalid-feedback">L'email renseigné est déjà
+    utilisé</p>
+  <p *ngIf="email.touched && email.hasError('bannedEmail')" class="invalid-feedback">L'adresse
+    email {{ email.getError('bannedEmail') }} est interdite</p>
+
+  <div confirmPassword ngModelGroup="security">
+    <input
+      #password="ngModel"
+      [(ngModel)]="data.password"
+      [class.is-invalid]="password.touched && (password.invalid || confirm.invalid)"
+      [class.is-valid]="password.touched && password.valid"
+      class="form-control mb-2"
+      id="password"
+      minlength="3"
+      name="password"
+      placeholder="Mot de passe"
+      required
+      type="password"
+    />
+
+    <p *ngIf="password.touched && password.hasError('required')" class="invalid-feedback">Le mot de passe est
+      obligatoire</p>
+
+    <p *ngIf="password.touched && password.hasError('minlength')" class="invalid-feedback">Le mot de passe doit
+      contenir au moins 3 caractères</p>
+
+    <input
+      #confirm="ngModel"
+      [class.is-invalid]="confirm.touched && confirm.invalid"
+      [class.is-valid]="confirm.touched && confirm.valid"
+      class="form-control mb-2"
+      id="confirm"
+      minlength="3"
+      name="confirm"
+      ngModel
+      placeholder="Confirmation du mot de passe"
+      required
+      type="password"
+
+    />
+    <p *ngIf="confirm.touched && confirm.hasError('required')" class="invalid-feedback">Le mot de passe
+      est obligatoire</p>
+
+    <p *ngIf="confirm.touched && confirm.hasError('minlength')" class="invalid-feedback">Le mot de passe doit contenir
+      au moins 3 caractères</p>
+
+    <p *ngIf="confirm.touched && confirm.hasError('confirmPassword')" class="invalid-feedback"> Les mots de passe ne
+      correspondent pas</p>
+  </div>
+  <button class="btn btn-success">Inscription</button>
+</form>

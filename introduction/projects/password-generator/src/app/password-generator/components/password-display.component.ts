@@ -16,8 +16,7 @@ import {Component, Input} from '@angular/core';
   styles: ``
 })
 export class PasswordDisplayComponent {
-  @Input()
-  title: string = "Votre mot de passe :";
+  @Input() title: string = "Votre mot de passe :";
 
   @Input()
   password: string = '';

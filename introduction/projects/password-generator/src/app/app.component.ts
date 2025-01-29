@@ -9,16 +9,15 @@ import {PasswordGeneratorService} from './password-generator/services/password-g
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  constructor(private passwordGeneratorService: PasswordGeneratorService) {
-  }
-
   password: string = '';
-
   passwordSettings: PasswordSettings = {
     length: 20,
     uppercase: false,
     numbers: false,
     symbols: false
+  }
+
+  constructor(private passwordGeneratorService: PasswordGeneratorService) {
   }
 
   get passwordSettingsCopy() {

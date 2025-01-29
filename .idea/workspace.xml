@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b92d4e0-0c47-428b-a344-40a901d08c47" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/introduction/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/introduction/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/introduction/projects/password-generator/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/introduction/projects/password-generator/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/introduction/projects/password-generator/src/app/password-generator/components/password-display.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/introduction/projects/password-generator/src/app/password-generator/components/password-display.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/introduction/projects/playground/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/introduction/projects/playground/src/app/app.module.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="angular-form" />
+                    <option name="lastUsedInstant" value="1737481984" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="dev" />
+                    <option name="lastUsedInstant" value="1736876141" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="dependency-injection" />
+                    <option name="lastUsedInstant" value="1736518792" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="password-generator" />
+                    <option name="lastUsedInstant" value="1736518745" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.6/bin/php" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2r4BuhK8uGCGrePPXWcX0YNInYM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Karma.PasswordControlsComponent (Spectator).should show a copy button if a password exists.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.PasswordSettingsComponent (TestBed).should emit an event with settings each time user changes html input.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;angular-form&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/flamy/Sites/angular/advanced-angular/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/advanced-angular/projects/playground/src/app/components" />
+      <recent name="$PROJECT_DIR$/advanced-angular/projects/playground/src/app/directives" />
+      <recent name="$PROJECT_DIR$/introduction/dist/password-generator" />
+      <recent name="$PROJECT_DIR$/introduction/projects/password-generator/src/app/password-generator" />
+      <recent name="$PROJECT_DIR$/introduction/projects/password-generator/src/app/services" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Karma.PasswordControlsComponent (Spectator).should show a copy button if a password exists">
+    <configuration name="PasswordControlsComponent (Spectator).should show a copy button if a password exists" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/introduction/projects/password-generator/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/introduction/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$/introduction" />
+      <node-interpreter value="project" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file-path value="$PROJECT_DIR$/introduction/projects/password-generator/src/app/password-generator/components/password-controls.component.spec.ts" />
+      <test-names>
+        <test-name value="PasswordControlsComponent (Spectator)" />
+        <test-name value="should show a copy button if a password exists" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="PasswordSettingsComponent (TestBed).should emit an event with settings each time user changes html input" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/introduction/projects/password-generator/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/introduction/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$/introduction" />
+      <node-interpreter value="project" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file-path value="$PROJECT_DIR$/introduction/projects/password-generator/src/app/components/password-settings.component.spec.ts" />
+      <test-names>
+        <test-name value="PasswordSettingsComponent (TestBed)" />
+        <test-name value="should emit an event with settings each time user changes html input" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Karma.PasswordControlsComponent (Spectator).should show a copy button if a password exists" />
+        <item itemvalue="Karma.PasswordSettingsComponent (TestBed).should emit an event with settings each time user changes html input" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23726.107" />
+        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23726.107" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b92d4e0-0c47-428b-a344-40a901d08c47" name="Changes" comment="" />
+      <created>1735808691740</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735808691740</updated>
+      <workItem from="1735808693024" duration="15838000" />
+      <workItem from="1735847057803" duration="3142000" />
+      <workItem from="1735978084470" duration="3797000" />
+      <workItem from="1735983768565" duration="9564000" />
+      <workItem from="1736071347846" duration="3022000" />
+      <workItem from="1736091126444" duration="24765000" />
+      <workItem from="1736241923174" duration="590000" />
+      <workItem from="1736420072768" duration="20524000" />
+      <workItem from="1736755881462" duration="1125000" />
+      <workItem from="1736847351665" duration="17816000" />
+      <workItem from="1736933130368" duration="15711000" />
+      <workItem from="1736961619580" duration="66000" />
+      <workItem from="1736961713238" duration="2803000" />
+      <workItem from="1737027553775" duration="3000" />
+      <workItem from="1737362877510" duration="8886000" />
+      <workItem from="1737450929905" duration="46386000" />
+      <workItem from="1737659959553" duration="63930000" />
+      <workItem from="1738135817862" duration="1131000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
