@@ -38,7 +38,7 @@
             ],
             "styles": [
               "projects/playground/src/styles.css",
-              "node_modules/bootswatch/dist/cosmo/bootstrap.min.css"
+              "node_modules/bootswatch/dist/solar/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -98,7 +98,8 @@
             "styles": [
               "projects/playground/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "projects/playground/karma.conf.js"
           }
         }
       }
@@ -138,7 +139,7 @@
             ],
             "styles": [
               "projects/crm/src/styles.css",
-              "node_modules/bootswatch/dist/cosmo/bootstrap.min.css"
+              "node_modules/bootswatch/dist/solar/bootstrap.min.css"
             ],
             "scripts": []
           },
