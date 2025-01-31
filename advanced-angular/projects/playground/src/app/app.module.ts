@@ -11,6 +11,10 @@ import {SignInComponent} from './components/sign-in.component';
 import {AppComponent} from './app.component';
 import {ReactiveSignInComponent} from './components/reactive-sign-in.component';
 import {RecipeComponent} from './components/recipe.component';
+import {MoviesComponent} from './components/movies/movies.component';
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
+import {MoviesService} from './components/movies/services/movies.service';
+import {MoviesKeyInterceptor} from './components/movies/services/movies-key.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import {RecipeComponent} from './components/recipe.component';
     ConfirmPasswordValidator,
     ColorPickerComponent,
     ReactiveSignInComponent,
-    RecipeComponent
+    RecipeComponent,
+    MoviesComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,14 @@ import {RecipeComponent} from './components/recipe.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(withInterceptorsFromDi()), // <-- Use this instead of HttpClientModule
+    MoviesService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MoviesKeyInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
