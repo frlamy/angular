@@ -12,8 +12,8 @@ class FakeService {
 describe('Declaration component (TestBed)', () => {
   it("should show taxes results", async () => {
     await TestBed.configureTestingModule({
-     declarations: [DeclarationComponent],
-      providers: [TaxesService, { provide: TAUX_TVA, useValue: 0.2}]
+      declarations: [DeclarationComponent],
+      providers: [TaxesService, {provide: TAUX_TVA, useValue: 0.2}]
     }).compileComponents();
 
     // const fakeService = new FakeService();
@@ -21,17 +21,17 @@ describe('Declaration component (TestBed)', () => {
     // TestBed.overrideComponent(DeclarationComponent, {
     //   set: {
     //     providers: [
-          // With factory
-          // {
-          //   provide: TaxesService,
-          //   useFactory: () => {
-          //     return new FakeService();
-          //   }
-          // }
-          // With useClass
-          // { provide: TaxesService, useClass: FakeService }
-          // With useValue
-          // { provide: TaxesService, useValue: fakeService }
+    // With factory
+    // {
+    //   provide: TaxesService,
+    //   useFactory: () => {
+    //     return new FakeService();
+    //   }
+    // }
+    // With useClass
+    // { provide: TaxesService, useClass: FakeService }
+    // With useValue
+    // { provide: TaxesService, useValue: fakeService }
     //     ],
     //   }
     // });
@@ -73,15 +73,14 @@ describe('DeclarationComponent (Spectator)', () => {
   let spectator: Spectator<DeclarationComponent>;
   const createSpectator = createComponentFactory({
     component: DeclarationComponent,
-    providers: [TaxesService, { provide: TAUX_TVA, useValue: 0.2 }],
+    providers: [TaxesService, {provide: TAUX_TVA, useValue: 0.2}],
     mocks: [TaxesService] // inclus un spy
   });
 
-  it ('should show taxes results', () => {
+  it('should show taxes results', () => {
     spectator = createSpectator();
 
-    const service = spectator.inject(TaxesService);
-    service.calculate.and.returnValue(400);
+    spectator.inject(TaxesService).calculate.and.returnValue(400);
     // Si on veut utiliser le spy plutôt que les mocks, schant que le mocks intègre déjà le spy
     // const spy = spyOn(service, 'calculate');
     // spy.and.returnValue(400);

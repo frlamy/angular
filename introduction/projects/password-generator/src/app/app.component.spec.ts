@@ -3,7 +3,6 @@ import {AppComponent} from './app.component';
 import {createComponentFactory, Spectator} from '@ngneat/spectator';
 import {PasswordGeneratorService} from './password-generator/services/password-generator.service';
 import {PasswordGeneratorModule} from './password-generator/password-generator.module';
-import {TaxesService} from '../../../playground/src/app/services/taxes.service';
 
 describe('AppComponent (Spectator)', () => {
   let spectator: Spectator<AppComponent>;
